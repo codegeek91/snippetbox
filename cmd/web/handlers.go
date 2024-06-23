@@ -47,7 +47,7 @@ func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	app.render(w, http.StatusOK, "snippet_view.gohtml", &templateData{Snippet: snippet})
+	app.render(w, http.StatusOK, "view.gohtml", &templateData{Snippet: snippet})
 }
 
 func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {

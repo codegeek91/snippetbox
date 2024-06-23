@@ -41,7 +41,7 @@ func main() {
 	// Define a new command-line flag with the name 'addr', a default value of ":4000"
 	// and some short help text explaining what the flag controls. The value of the
 	// flag will be stored in the addr variable at runtime.
-	addr := flag.String("addr", ":4000", "HTTP network address")
+	addr := flag.String("addr", "127.0.0.1:4000", "HTTP network address")
 
 	// Define a new command-line flag for the MySQL DSN string.
 	dsn := flag.String("dsn", "web:LinK911110@/snippetbox?parseTime=true", "MySQL data source name")
