@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Define a Snippet type to hold the data for an individual snippet. Notice how
+// Snippet Define a Snippet type to hold the data for an individual snippet. Notice how
 // the fields of the struct correspond to the fields in our MySQL snippets
 // table?
 type Snippet struct {
@@ -17,12 +17,12 @@ type Snippet struct {
 	Expires time.Time
 }
 
-// Define a SnippetModel type which wraps a sql.DB connection pool.
+// SnippetModel Define a SnippetModel type which wraps a sql.DB connection pool.
 type SnippetModel struct {
 	DB *sql.DB
 }
 
-// This will insert a new snippet into the database.
+// Insert This will insert a new snippet into the database.
 func (m *SnippetModel) Insert(title string, content string, expires int) (int, error) {
 
 	// Write the SQL statement we want to execute. I've split it over two lines
@@ -51,7 +51,7 @@ func (m *SnippetModel) Insert(title string, content string, expires int) (int, e
 	return int(id), nil
 }
 
-// This will return a specific snippet based on its id.
+// Get This will return a specific snippet based on its id.
 func (m *SnippetModel) Get(id int) (*Snippet, error) {
 	// Write the SQL statement we want to execute. Again, I've split it over two
 	// lines for readability.
